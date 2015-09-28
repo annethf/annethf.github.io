@@ -13,7 +13,9 @@
 <meta property="og:site_name" content="annethf's blog">
 <meta property="og:description" content="原文链接http://www.latex-tutorial.com/tutorials/
 陌生单词backslash: slash 斜线号 backslash 反斜线号 \self-explanatory 不言自明的typesetting 排版impertative 必要的，紧要的preamble 前言，序言straightforward 简单明了in handy 派上用场auxiliary 辅助">
-<meta property="og:updated_time" content="2015-09-25T06:52:11.071Z">
+<meta property="og:image" content="http://blog.annethf.me/images/options.jpg">
+<meta property="og:image" content="http://blog.annethf.me/images/editor.jpg">
+<meta property="og:updated_time" content="2015-09-26T03:30:43.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTex学习笔记（一）">
 <meta name="twitter:description" content="原文链接http://www.latex-tutorial.com/tutorials/
@@ -98,24 +100,26 @@
         <p>原文链接<a href="http://www.latex-tutorial.com/tutorials/" target="_blank" rel="external">http://www.latex-tutorial.com/tutorials/</a></p>
 <h3 id="陌生单词">陌生单词</h3><p>backslash: slash 斜线号 backslash 反斜线号 \<br>self-explanatory 不言自明的<br>typesetting 排版<br>impertative 必要的，紧要的<br>preamble 前言，序言<br>straightforward 简单明了<br>in handy 派上用场<br>auxiliary 辅助(人或物)</p>
 <h3 id="编译错误">编译错误</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Could <span class="operator">not</span> <span class="built_in">start</span> <span class="operator">the</span> <span class="command"><span class="keyword">command</span>: <span class="title">xelatex</span>.<span class="title">exe</span> -<span class="title">synctex</span>=<span class="title">1-interaction</span>=<span class="title">nonstopmode</span> <span class="string">"document"</span>.<span class="title">tex</span></span></span><br></pre></td></tr></table></figure>
-<p>texstudio系统环境配置的不对，在网上查了好久都没结果，最后果断重装，不过顺序必须是先装TexLive2015然后再装Texstudio，这样就不需要手动配置了。果然重装之后问题完美解决。</p>
+<p>Texstudio系统环境配置的不对，在网上查了好久都没结果，最后果断重装，不过顺序必须是先装TexLive2015然后再装Texstudio，这样就不需要手动配置了。果然重装之后问题完美解决。</p>
+<h3 id="添加对中文的支持">添加对中文的支持</h3><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\usepackage&#123;ctex&#125;</span></span><br></pre></td></tr></table></figure>
+<p>TexLive2015+Texstudio环境下是不支持中文的，具体会出现的问题是：生成的pdf文档要么不显示文章中的中文，要么显示乱码。解决这一问题的办法是，先在texstudio中进行如下设置：<br><img src="/images/options.jpg" alt=""><br>如上图选择Options/Configure Texstudio然后会进入另一个窗口，如下图所示：<br><img src="/images/editor.jpg" alt=""><br>点击Editor，设置Default Font Encoding为UTF-8，设置好之后，点击OK。然后在文章源代码中添加\usepackage{ctex}就可以正常显示中文了。</p>
 <h3 id="小结">小结</h3><ul>
 <li>文章分前言部分和正文部分</li>
 <li>文章环境必须定义，每一种环境都以begin标签开始，并且以end标签结束</li>
 <li>所有命令都以”\”开始</li>
-<li>页码设置命令pagenumbering的可选参数<blockquote>
-<p>gobble  没有页码<br>  arabic  阿拉伯数字<br>  roman   罗马数字 </p>
-</blockquote>
-</li>
+<li>页码设置命令pagenumbering的可选参数<pre><code><span class="title">gobble</span>      没有页码
+arabic      阿拉伯数字
+roman       罗马数字 
+</code></pre></li>
 <li>用\section, \subsection和\subsubsection命令定义文章章节，且每一章节都会用连续的数字标识</li>
 <li>用\paragraph, \subparagraph命令定义文章段落，但是文章段落不会用数字标识</li>
 <li>用\usepackage命令引入宏包，且所有宏包必须在前言部分引入，宏包可以为文章增加许多新特性，如：函数、图片、链接和参考文献等等。</li>
 </ul>
-<p>示例文章<br>源代码</p>
+<p>源代码</p>
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://blog.annethf.me/2015/09/25/LaTex学习笔记（一）/" data-id="ciezajw170002ewh9xce2xjie" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://blog.annethf.me/2015/09/25/LaTex学习笔记（一）/" data-id="cif3f4nx10003w8h9relnmrg0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
         
       </footer>
